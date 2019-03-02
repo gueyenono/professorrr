@@ -1,0 +1,17 @@
+Package: professorrr
+Type: Package
+Title: A Suite of Performance Evaluations Tools for Teachers
+Version: 0.0.0.9000
+Authors@R: person("Ghislain", "Gueye", "Nono", email = "nonoghislain@gmail.com",
+  role = c("aut", "cre"))
+Description: A suite of tools, which allows teachers to evaluate the performance of their students.
+    The package makes it easy for teachers to calculate grades with specific parameters.
+    After the computation of grades, the teacher can also generate various kinds of reports.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    purrr,
+    stringr
+RoxygenNote: 6.1.1
