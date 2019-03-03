@@ -9,6 +9,9 @@
 #' @param weights A numeric vector specifying the weights of each evaluation type. Each weight is a decimal number most likely between 0 and 1.
 #' @return A \code{tbl_prof} object.
 #' 
+#' @importFrom dplyr as_tibble select %>%
+#' @importFrom stringr str_which str_to_lower
+#' @importFrom purrr map set_names
 #' @export
 
 tbl_prof <- function(x, evals, max_scores = NULL, weights = NULL){

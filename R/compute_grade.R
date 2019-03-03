@@ -7,6 +7,8 @@
 #' @param drop_n A numeric vector specifying whether lowest scores should be dropped in specific evaluation types.
 #' @return A \code{tbl_prof} object.
 #' 
+#' @importFrom dplyr as_tibble bind_cols %>%
+#' @importFrom purrr map2 map_dfc set_names pmap map2_dfc map_dbl
 #' @export
 
 compute_grade <- function(x, drop_n = NULL){

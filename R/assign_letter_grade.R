@@ -7,6 +7,7 @@
 #' @param letter_grades A character vector of letter grades.
 #' @return a \code{tbl_prof} object.
 #' 
+#' @importFrom dplyr bind_cols %>%
 #' @export
 
 assign_letter_grade <- function(x, intervals = NULL, letter_grades = NULL){
