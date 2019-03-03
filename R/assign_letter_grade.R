@@ -6,6 +6,8 @@
 #' @param intervals A numeric vector specifying intervals for grades.
 #' @param letter_grades A character vector of letter grades.
 #' @return a \code{tbl_prof} object.
+#' 
+#' @export
 
 assign_letter_grade <- function(x, intervals = NULL, letter_grades = NULL){
 
@@ -15,12 +17,12 @@ assign_letter_grade <- function(x, intervals = NULL, letter_grades = NULL){
 	total <- attr(x, "total")
 
 	grades <- cut(total, intervals, letter_grades, include.lowest = TRUE, right = FALSE)
-	out <- bind_cols(x, grades)
+	out <- dplyr::bind_cols(x, grades)
 
 	if(!is.null(attr(x, "total_dropped"))){
 		total_dropped <- attr(x, "total_dropped")
 		grades_dropped <- cut(total_dropped, intervals, letter_grades, include.lowest = TRUE, right = FALSE)
-		out <- bind_cols(out, grades_dropped)
+		out <- dplyr::bind_cols(out, grades_dropped)
 	}
 
 	out

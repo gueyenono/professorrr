@@ -7,18 +7,18 @@
 tbl_prof(x, evals, max_scores = NULL, weights = NULL)
 }
 \arguments{
-\item{x}{A data frame.}
+\item{x}{A data frame containing evaluation scores.}
 
 \item{evals}{A character vector of regular expressions used to identify evaluation types in \code{x}.}
 
 \item{max_scores}{A numeric vector specifying the maximum scores for each evaluation type.}
 
-\item{weights}{A numeric vector specifying the weights of each evaluation type. Weights are decimal numbers between 0 and 1.}
+\item{weights}{A numeric vector specifying the weights of each evaluation type. Each weight is a decimal number most likely between 0 and 1.}
 }
 \value{
-A tbl_prof object.
+A \code{tbl_prof} object.
 }
 \description{
-Creating a \code{tbl_prof} object marks the start of the workflow.
-Specify evaluation types, maximum scores and weights.
+The function creates a \code{tbl_prof} object. This is the first step of the workflow as all subsequent
+operations can only be performed on a \code{tbl_prof} object.
 }

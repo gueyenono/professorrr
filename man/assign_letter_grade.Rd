@@ -13,6 +13,9 @@ assign_letter_grade(x, intervals = NULL, letter_grades = NULL)
 
 \item{letter_grades}{A character vector of letter grades.}
 }
+\value{
+a \code{tbl_prof} object.
+}
 \description{
-Assign a letter grade based on the grade computed by the \code{compute_grade()} function.
+Assign a letter grade based on the grade computed by the \code{compute_grade} function.
 }

@@ -8,6 +8,8 @@
 #' @param max_scores A numeric vector specifying the maximum scores for each evaluation type.
 #' @param weights A numeric vector specifying the weights of each evaluation type. Each weight is a decimal number most likely between 0 and 1.
 #' @return A \code{tbl_prof} object.
+#' 
+#' @export
 
 tbl_prof <- function(x, evals, max_scores = NULL, weights = NULL){
 
@@ -15,12 +17,12 @@ tbl_prof <- function(x, evals, max_scores = NULL, weights = NULL){
 	if(is.null(weights)) weights <-  rep(1, length(evals)) / length(evals)
 
 	attr(x, "evals") <-
-	 	map(evals, function(eval){
-	 		cols <- str_which(str_to_lower(colnames(x)), str_to_lower(eval))
-	 		select(x, cols)
+	 	purrr::map(evals, function(eval){
+	 		cols <- stringr::str_which(stringr::str_to_lower(colnames(x)), stringr::str_to_lower(eval))
+	 		dplyr::select(x, cols)
 	 	}) %>%
-	 	set_names(evals) %>%
-	 	as_tibble()
+	 	purrr::set_names(evals) %>%
+	 	dplyr::as_tibble()
 
 	attr(x, "max_scores") <- max_scores
 	attr(x, "weights") <- weights

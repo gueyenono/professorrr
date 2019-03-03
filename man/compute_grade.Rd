@@ -16,5 +16,5 @@ A \code{tbl_prof} object.
 }
 \description{
 The function computes the percentages, weighted averages and the total grade.
-Scores to drop (lowest) can also be specified.
+The user can specify whether the lowest \code{n} scores of an evaluation type must be dropped.
 }
