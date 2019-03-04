@@ -11,4 +11,4 @@
 #'     \item{exam_1, exam_2, exam_3, final}{exam scores out of 100}#' 
 #' }
 
-"scores"
+NULL
