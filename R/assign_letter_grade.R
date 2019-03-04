@@ -18,12 +18,12 @@ assign_letter_grade <- function(x, interval = NULL, letter_grade = NULL){
 	total <- attr(x, "total")
 
 	grades <- cut(total, interval, letter_grade, include.lowest = TRUE, right = FALSE)
-	out <- dplyr::bind_cols(x, grades)
+	out <- dplyr::bind_cols(x, grade = grades)
 
 	if(!is.null(attr(x, "total_dropped"))){
 		total_dropped <- attr(x, "total_dropped")
 		grades_dropped <- cut(total_dropped, interval, letter_grade, include.lowest = TRUE, right = FALSE)
-		out <- dplyr::bind_cols(out, grades_dropped)
+		out <- dplyr::bind_cols(out, grade_dropped = grades_dropped)
 	}
 
 	out
