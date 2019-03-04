@@ -30,7 +30,7 @@ compute_grade <- function(x, drop_n = NULL){
 		purrr::set_names(paste0(names(evals), "_weighted_mean")) %>%
 		dplyr::as_tibble()
 
-	total_full <- rowMeans(weighted_means_full)
+	total_full <- rowSums(weighted_means_full)
 
 	attr(x, "percent") <- percent_full
 	attr(x, "weighted_mean") <- weighted_means_full
@@ -63,7 +63,7 @@ compute_grade <- function(x, drop_n = NULL){
 			purrr::set_names(paste0(names(evals), "_dropped_weighted_mean")) %>%
 			dplyr::as_tibble()
 
-		total_dropped <- rowMeans(weighted_means_dropped)
+		total_dropped <- rowSums(weighted_means_dropped)
 
 		attr(out, "evals_dropped") <- evals_dropped
 		attr(out, "percent_dropped") <- percent_dropped
