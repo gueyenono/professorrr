@@ -7,7 +7,7 @@ Authors@R: person("Ghislain", "Gueye", "Nono", email = "nonoghislain@gmail.com",
 Description: A suite of tools, which allows teachers to evaluate the performance of their students.
     The package makes it easy for teachers to calculate grades with specific parameters.
     After the computation of grades, the teacher can also generate various kinds of reports.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 

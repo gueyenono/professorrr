@@ -1,3 +1,5 @@
+#' Scores data set.
+#'
 #' Evaluation scores for students.
 #' 
 #' A dataset containing scores on quizzes, homework assignments, exams and
@@ -11,4 +13,4 @@
 #'     \item{exam_1, exam_2, exam_3, final}{exam scores out of 100}#' 
 #' }
 
-NULL
+"scores"
