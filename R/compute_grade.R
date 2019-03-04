@@ -65,15 +65,13 @@ compute_grade <- function(x, drop_n = NULL){
 
 		total_dropped <- rowMeans(weighted_means_dropped)
 
-		attr(x, "evals_dropped") <- evals_dropped
-		attr(x, "percent_dropped") <- percent_dropped
-		attr(x, "weighted_means_dropped") <- weighted_means_dropped
-		attr(x, "total_dropped") <- total_dropped
+		attr(out, "evals_dropped") <- evals_dropped
+		attr(out, "percent_dropped") <- percent_dropped
+		attr(out, "weighted_means_dropped") <- weighted_means_dropped
+		attr(out, "total_dropped") <- total_dropped
 
 		out <- dplyr::bind_cols(out, percent_dropped, weighted_means_dropped, total_dropped = total_dropped)
 	}
-
-	class(out) <- c("tbl_prof_means", class(out))
 
 	out
 }
