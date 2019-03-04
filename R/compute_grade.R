@@ -12,6 +12,8 @@
 #' @export
 
 compute_grade <- function(x, drop_n = NULL){
+	
+	if(!is.tbl_prof(x)) stop("x must be a tbl_prof object. See ?tbl_prof.")
 
 	evals <- attr(x, "evals")
 	weights <- attr(x, "weights")
@@ -34,7 +36,7 @@ compute_grade <- function(x, drop_n = NULL){
 	attr(x, "weighted_mean") <- weighted_means_full
 	attr(x, "total") <- total_full
 
-	out <- dplyr::bind_cols(x, percent_full, weighted_means_full, total_full)
+	out <- dplyr::bind_cols(x, percent_full, weighted_means_full, total = total_full)
 
 	if(!is.null(drop_n)){
 
@@ -70,7 +72,7 @@ compute_grade <- function(x, drop_n = NULL){
 		attr(x, "weighted_means_dropped") <- weighted_means_dropped
 		attr(x, "total_dropped") <- total_dropped
 
-		out <- dplyr::bind_cols(out, percent_dropped, weighted_means_dropped, total_dropped)
+		out <- dplyr::bind_cols(out, percent_dropped, weighted_means_dropped, total_dropped = total_dropped)
 	}
 
 	class(out) <- c("tbl_prof_means", class(out))
