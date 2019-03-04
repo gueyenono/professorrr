@@ -40,8 +40,6 @@ compute_grade <- function(x, drop_n = NULL){
 
 	if(!is.null(drop_n)){
 
-		if(is.null(drop_n)) drop_n <- rep(0, length(evals))
-
 		evals_dropped <-
 			purrr::map2(evals, drop_n, function(eval, drop){
 				if(drop != 0){
