@@ -4,14 +4,14 @@
 \alias{assign_letter_grade}
 \title{Assign letter grades}
 \usage{
-assign_letter_grade(x, intervals = NULL, letter_grades = NULL)
+assign_letter_grade(x, interval = NULL, letter_grade = NULL)
 }
 \arguments{
 \item{x}{A \code{tbl_prof} object.}
 
-\item{intervals}{A numeric vector specifying intervals for grades.}
+\item{interval}{A numeric vector specifying interval for grades.}
 
-\item{letter_grades}{A character vector of letter grades.}
+\item{letter_grade}{A character vector of letter grades.}
 }
 \value{
 a \code{tbl_prof} object.

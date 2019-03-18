@@ -12,7 +12,6 @@
 #' @importFrom dplyr as_tibble select %>%
 #' @importFrom stringr str_which str_to_lower
 #' @importFrom purrr map set_names
-#' @import tibble
 #' @export
 
 tbl_prof <- function(x, evals, max_scores = NULL, weights = NULL){
