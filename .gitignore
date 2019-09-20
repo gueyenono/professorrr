@@ -2,3 +2,4 @@ inst/doc
 packrat/lib*/
 .Rproj.user
 data-raw/
+.Rhistory

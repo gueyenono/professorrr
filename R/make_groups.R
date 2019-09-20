@@ -65,24 +65,6 @@ make_groups <- function(.data, group_size, alt_group_size = "larger", groups_col
 						 times = c(rep(s + q, g - v), rep(s + q + 1, v)))
 	}
 	
-	
-	# case_when(
-	# 	r == 0                                       ~ rep(seq_len(g) + group_index_start,
-	# 																		times = s),
-	# 	
-	# 	# r > 0 & s - r <= max_difference            ~ rep(seq_len(g) + group_index_start,
-	# 	# 																	times = c(rep(s, g - 1), rep(r, 1))),
-	# 	
-	# 	r > 0 & alt_group_size == "larger" & v == 0  ~ rep(seq_len(g) + group_index_start,
-	# 																		times = s + q),  # method 1 / case 1
-	# 	
-	# 	r > 0 & alt_group_size == "larger" & r < g   ~ rep(seq_len(g) + group_index_start, # method 1 / case 2
-	# 																		times = c(rep(s + 1, r), rep(s, g - r))),
-	# 	
-	# 	r > g & alt_group_size == "larger" & v > 0   ~ rep(seq_len(g) + group_index_start, # method 1 / case 3
-	# 																		times = c(rep(s + q, g - v), rep(s + q + 1, v)))
-	# ) -> group
-	
 	.data_2[[groups_col]][sample(no_group_ids)] <- group
 	
 	.data_2
